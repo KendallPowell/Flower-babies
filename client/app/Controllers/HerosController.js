@@ -1,6 +1,7 @@
 import { appState } from "../AppState.js"
 import { herosService } from "../Services/HerosService.js"
 import { getFormData } from "../Utils/FormHandler.js"
+import { Pop } from "../Utils/Pop.js"
 import { setHTML } from "../Utils/Writer.js"
 
 function _drawHeros() {
@@ -10,9 +11,17 @@ function _drawHeros() {
 }
 export class HerosController {
   constructor() {
+    this.getHeros()
     appState.on('heros', _drawHeros)
   }
-
+  async getHeros() {
+    try {
+      await herosService.getHeros()
+    } catch (error) {
+      Pop.error(error.message)
+      console.error(error)
+    }
+  }
   async createHero() {
     window.event.preventDefault()
     let form = window.event.target
