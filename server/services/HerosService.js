@@ -9,8 +9,8 @@ class HerosService {
     // console.log('get all heros service is up')
   }
 
-  async createHero(heroData) {
-    const newHero = await dbContext.Hero.create(heroData)
+  async createHero(body) {
+    const newHero = await dbContext.Hero.create(body)
     return newHero
   }
 
