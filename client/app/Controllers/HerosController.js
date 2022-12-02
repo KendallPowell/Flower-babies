@@ -14,7 +14,6 @@ export class HerosController {
   }
 
   async createHero() {
-    debugger
     window.event.preventDefault()
     let form = window.event.target
     let formData = getFormData(form)
