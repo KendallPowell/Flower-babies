@@ -5,6 +5,6 @@ export const HeroSchema = new Schema({
   universe: { type: Boolean, required: true },
   description: { type: String, required: true },
   homePlanet: { type: String },
-  superpowers: { type: String }
+  superpowers: { type: Boolean }
 
 }, { timestamps: true, toJSON: { virtuals: true } })
