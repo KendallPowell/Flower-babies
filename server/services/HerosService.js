@@ -1,4 +1,5 @@
 import { dbContext } from "../db/DbContext.js"
+import { BadRequest } from "../utils/Errors.js"
 
 
 class HerosService {
@@ -11,6 +12,13 @@ class HerosService {
   async createHero(heroData) {
     const newHero = await dbContext.Hero.create(heroData)
     return newHero
+  }
+
+  async removeHero(heroId) {
+    const deleted = await dbContext.Hero.findById(heroId)
+    if (!deleted) throw new BadRequest('sucks to suck bad delete request')
+    await deleted.remove()
+    return `${deleted.name} was "killed"`
   }
 }
 

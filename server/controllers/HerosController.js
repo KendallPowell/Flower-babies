@@ -10,6 +10,7 @@ export class HerosController extends BaseController {
       .get('', this.getAllHeros)
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.createHero)
+      .delete('/:heroId', this.removeHero)
   }
 
   async getAllHeros(req, res, next) {
@@ -25,6 +26,15 @@ export class HerosController extends BaseController {
     try {
       const hero = await herosService.createHero(req.body)
       res.send(hero)
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  async removeHero(req, res, next) {
+    try {
+      const message = await herosService.removeHero(req.params.heroId)
+      res.send(message)
     } catch (error) {
       next(error)
     }
