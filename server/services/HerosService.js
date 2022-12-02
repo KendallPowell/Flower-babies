@@ -20,6 +20,7 @@ class HerosService {
     await deleted.remove()
     return `${deleted.name} was "killed"`
   }
+
 }
 
 export const herosService = new HerosService()
