@@ -6,7 +6,7 @@ class UsersService {
 
   async becomeUser(body) {
     const user = dbContext.User.create(body)
-    await User.populate('user', 'name picture')
+    await user.populate('user', 'name picture')
   }
 
 
