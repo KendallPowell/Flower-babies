@@ -2,6 +2,7 @@
 
 export class Hero {
   constructor(data) {
+    this.id = data.id
     this.name = data.name
     this.universe = data.universe
     this.description = data.description
@@ -24,6 +25,7 @@ export class Hero {
       <i class="mdi mdi-thumb-up selectable"></i>
       <h4>${this.rating}</h4>
       <i class="mdi mdi-thumb-down selectable"></i>
+      <i class="mdi mdi-delete selectable text-danger" onclick="app.herosController.removeHero(${this.id})"></i>
     </div>
   </div>
     `
