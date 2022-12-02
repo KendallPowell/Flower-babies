@@ -1,4 +1,3 @@
-import { dbContext } from "../../../server/db/DbContext.js";
 import { appState } from "../AppState.js";
 import { Hero } from "../Models/Hero.js";
 import { server } from "./AxiosService.js";
@@ -6,7 +5,8 @@ import { server } from "./AxiosService.js";
 
 class HerosService {
   async removeHero(heroId) {
-    const res = await dbContext.Hero.remove('api/heros/' + heroId)
+    const res = await server.delete('api/heros/' + heroId)
+    console.log(res.data);
     let filtered = appState.heros.filter(h => h.id != heroId)
     appState.heros = filtered
   }
