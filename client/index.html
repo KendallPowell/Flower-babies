@@ -56,22 +56,25 @@
         <form onsubmit="app.herosController.createHero()">
           <div class="form-group">
             <label for="heroName">Name</label>
-            <input type="text" class="form-control" id="heroName" aria-describedby="emailHelp" placeholder="Enter Name">
+            <input type="text" class="form-control" id="heroName" name="name" aria-describedby="emailHelp"
+              placeholder="Enter Name">
           </div>
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="isMarvel">
+            <input type="checkbox" class="form-check-input" id="isMarvel" name="universe">
             <label class="form-check-label" for="exampleCheck1">Are they from Marvel?</label>
           </div>
           <div class="form-group">
             <label for="heroDescription">Description</label>
-            <input type="text" class="form-control" id="heroDescription" placeholder="Tell us about the hero!">
+            <input type="text" class="form-control" id="heroDescription" placeholder="Tell us about the hero!"
+              name="description">
           </div>
           <div class="form-group">
             <label for="heroPlanet">Home Planet</label>
-            <input type="text" class="form-control" id="heroPlanet" placeholder="What planet is your hero from?">
+            <input type="text" class="form-control" id="heroPlanet" placeholder="What planet is your hero from?"
+              name="homePlanet">
           </div>
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="hasPowers">
+            <input type="checkbox" class="form-check-input" id="hasPowers" name="superpowers">
             <label class="form-check-label" for="hasPowers">Super Powers?</label>
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>

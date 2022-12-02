@@ -15,8 +15,8 @@ class HerosService {
 
 
   async createHero(formData) {
-    console.log(formData.value);
     const res = await server.post('api/heros', formData)
+    console.log(res);
     appState.heros.push(new Hero(res.data))
     appState.emit('heros')
   }

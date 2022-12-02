@@ -25,7 +25,7 @@ export class HerosController extends BaseController {
   async createHero(req, res, next) {
     try {
       const hero = await herosService.createHero(req.body)
-      res.send(hero)
+      return res.send(hero)
     } catch (error) {
       next(error)
     }
