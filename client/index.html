@@ -34,27 +34,50 @@
       <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
     </nav>
   </header>
-  <main id="app">
-    <div class="container-fluid">
-      <div class="row my-3">
-        <div class="col-lg-5" id="auth-settings">
-          <div class="card p-2 skeleton-loader">
-            <div class="card-title p-2">
-              <div class="d-flex align-items-center">
-                <div class="skeleton-loader avatar"></div>
-                <div class="skeleton-loader text mx-2"></div>
-              </div>
-            </div>
-            <div class="card-body border-top">
-              <div class="skeleton-loader text block"></div>
-              <div class="skeleton-loader text block"></div>
-              <div class="skeleton-loader text block"></div>
-            </div>
-          </div>
+  <main class="container-fluid">
+    <section id="heros" class="row">
+      <!-- SECTION hero template -->
+      <!-- <div class="col-md-4 card p-2 m-2 elevation-3">
+        <div>
+          <img class="img-card" src="http://thiscatdoesnotexist.com" alt="">
         </div>
+        <div class="text-center">
+          <h1>Name</h1>
+        </div>
+        <div class="d-flex justify-content-evenly">
+          <i class="mdi mdi-thumb-up selectable"></i>
+          <h4>Counter</h4>
+          <i class="mdi mdi-thumb-down selectable"></i>
+        </div>
+      </div> -->
+    </section>
+    <section class="row">
+      <div>
+        <form onsubmit="app.herosController.createHero()">
+          <div class="form-group">
+            <label for="heroName">Name</label>
+            <input type="text" class="form-control" id="heroName" aria-describedby="emailHelp" placeholder="Enter Name">
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="isMarvel">
+            <label class="form-check-label" for="exampleCheck1">Are they from Marvel?</label>
+          </div>
+          <div class="form-group">
+            <label for="heroDescription">Description</label>
+            <input type="text" class="form-control" id="heroDescription" placeholder="Tell us about the hero!">
+          </div>
+          <div class="form-group">
+            <label for="heroPlanet">Home Planet</label>
+            <input type="text" class="form-control" id="heroPlanet" placeholder="What planet is your hero from?">
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="hasPowers">
+            <label class="form-check-label" for="hasPowers">Super Powers?</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
       </div>
-    </div>
-
+    </section>
   </main>
   <footer class="container-fluid bg-dark text-light">
     <div class="row text-center">
