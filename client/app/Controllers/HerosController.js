@@ -27,6 +27,16 @@ export class HerosController {
     let form = window.event.target
     let formData = getFormData(form)
     console.log(formData);
+    if (formData.universe == "on") {
+      formData.universe = true
+    } else {
+      formData.universe = false
+    }
+    if (formData.superpowers == 'on') {
+      formData.superpowers = true
+    } else {
+      formData.superpowers = false
+    }
     await herosService.createHero(formData)
   }
 
