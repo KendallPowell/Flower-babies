@@ -2,7 +2,7 @@
 
 class HerosService {
   createHero(formData) {
-    console.log('awaiting the formData');
+    console.log(formData);
   }
 
 }

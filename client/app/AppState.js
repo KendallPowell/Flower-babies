@@ -1,5 +1,4 @@
 import { dev } from './env.js'
-import { Hero } from "./Models/Hero"
 import { EventEmitter } from './Utils/EventEmitter.js'
 import { isValidProp } from './Utils/isValidProp.js'
 
