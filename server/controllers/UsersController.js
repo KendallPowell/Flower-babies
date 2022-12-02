@@ -5,6 +5,7 @@ export class UsersController extends BaseController {
   constructor() {
     super('api/users')
     this.router
+      .put('', this.becomeUser)
   }
 
   async becomeUser(req, res, next) {
