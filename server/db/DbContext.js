@@ -9,7 +9,7 @@ class DbContext {
   Account = mongoose.model('Account', AccountSchema);
 
   Hero = mongoose.model('Hero', HeroSchema);
-  User = mongoose.model('User', UserSchema)
+  User = mongoose.model('User', UserSchema);
 }
 
 export const dbContext = new DbContext()
