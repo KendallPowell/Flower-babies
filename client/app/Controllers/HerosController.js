@@ -40,4 +40,15 @@ export class HerosController {
     await herosService.createHero(formData)
   }
 
+  async removeHero(heroId) {
+    try {
+      if (await Pop.confirm()) {
+        await herosService.removeHero(heroId)
+      }
+    } catch (error) {
+      Pop.error(error.message)
+      console.error(error);
+    }
+  }
+
 }
