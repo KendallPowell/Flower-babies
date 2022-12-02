@@ -15,7 +15,7 @@ export class Hero {
     return `
     <div class="col-md-4 card p-2 m-2 elevation-3">
     <div>
-      <img class="img-card" src="http://thiscatdoesnotexist.com" alt="">
+      <img class="img-card" src="${this.imgUrl}" alt="">
     </div>
     <div class="text-center">
       <h1>${this.name}</h1>
