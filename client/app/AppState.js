@@ -12,6 +12,8 @@ class AppState extends EventEmitter {
   socketData = []
   /** @type {import('./Models/Hero').Hero[]} */
   heros = []
+  /** @type {import('./Models/Hero').Hero | null} */
+  activeHero = null
 }
 
 export const appState = new Proxy(new AppState(), {

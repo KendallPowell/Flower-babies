@@ -4,6 +4,11 @@ import { server } from "./AxiosService.js";
 
 
 class HerosService {
+  setActive(heroId) {
+    const activeHero = appState.heros.find(h => h.id == heroId)
+    appState.activeHero = activeHero
+    console.log(activeHero);
+  }
   async removeHero(heroId) {
     const res = await server.delete('api/heros/' + heroId)
     console.log(res.data);
@@ -17,7 +22,6 @@ class HerosService {
     appState.heros = res.data.map(h => new Hero(h))
     console.log(appState.heros, 'got heros')
   }
-
 
 
   async createHero(formData) {

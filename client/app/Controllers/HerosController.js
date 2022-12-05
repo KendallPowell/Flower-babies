@@ -1,4 +1,5 @@
 import { appState } from "../AppState.js"
+import { Hero } from "../Models/Hero.js"
 import { herosService } from "../Services/HerosService.js"
 import { getFormData } from "../Utils/FormHandler.js"
 import { Pop } from "../Utils/Pop.js"
@@ -9,10 +10,20 @@ function _drawHeros() {
   appState.heros.forEach(h => template += h.HeroTemplate)
   setHTML('heros', template)
 }
+
+function _drawActive() {
+  setHTML('heroModalContent', appState.activeHero.ActiveHeroTemplate)
+}
+
+
 export class HerosController {
   constructor() {
     this.getHeros()
     appState.on('heros', _drawHeros)
+    appState.on('activeHero', _drawActive)
+  }
+  drawActiveForm() {
+    setHTML('heroModalContent', Hero.GetActiveForm())
   }
   async getHeros() {
     try {
@@ -50,5 +61,15 @@ export class HerosController {
       console.error(error);
     }
   }
+
+  setActive(heroId) {
+    try {
+      herosService.setActive(heroId)
+    } catch (error) {
+      Pop.error(error.message)
+      console.error(error);
+    }
+  }
+
 
 }

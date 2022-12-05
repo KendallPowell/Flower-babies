@@ -31,14 +31,26 @@
           <!-- NAVLINKS -->
         </div>
       </div>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Create Hero
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#heroModal"
+        onclick="app.herosController.drawActiveForm()">
+        Create New Hero
       </button>
       <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
     </nav>
   </header>
   <main class="container-fluid">
-    <section id="heros" class="row">
+    <!-- <section id="" class="row">
+      <div class="col-6 p-1">
+        <img class="img-card" src="https://thiscatdoesnotexist.com" alt="">
+      </div>
+      <div class="col-6 card">
+        <h1>Description</h1>
+      </div>
+      <div class="col-12 card">
+        <h4>Comments</h4>
+      </div>
+    </section> -->
+    <section id="heros" class="row justify-content-around p-2 m-2">
       <!-- SECTION hero template -->
       <!-- <div class="col-md-4 card p-2 m-2 elevation-3">
         <div>
@@ -54,7 +66,7 @@
         </div>
       </div> -->
     </section>
-    <section class="row">
+    <!-- <section class="row">
       <div>
         <form onsubmit="app.herosController.createHero()">
           <div class="form-group">
@@ -87,7 +99,7 @@
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
-    </section>
+    </section> -->
   </main>
   <footer class="container-fluid bg-dark text-light">
     <div class="row text-center">
@@ -95,33 +107,62 @@
         <p><small>Made with 💖 by CodeWorks</small></p>
       </div>
     </div>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-      Launch demo modal
-    </button>
+
   </footer>
 
 
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+  <div class="modal fade" id="heroModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" id="heroModalContent">
+        <!-- <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New Hero</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          ...
+          <section class="row">
+            <div>
+              <form onsubmit="app.herosController.createHero()">
+                <div class="form-group">
+                  <label for="heroName">Name</label>
+                  <input type="text" class="form-control" id="heroName" name="name" aria-describedby="emailHelp"
+                    placeholder="Enter Name">
+                </div>
+                <div class="form-group">
+                  <label for="heroDescription">Description</label>
+                  <input type="text" class="form-control" id="heroDescription" placeholder="Tell us about the hero!"
+                    name="description">
+                </div>
+                <div class="form-group">
+                  <label for="heroPlanet">Home Planet</label>
+                  <input type="text" class="form-control" id="heroPlanet" placeholder="What planet is your hero from?"
+                    name="homePlanet">
+                </div>
+                <div class="form-group">
+                  <label for="imgUrl">Url</label>
+                  <input type="imgUrl" class="form-control" id="imgUrl" placeholder="Give me a URL!!!!" name="imgUrl">
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="isMarvel" name="universe">
+                  <label class="form-check-label" for="exampleCheck1">Are they from Marvel?</label>
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="hasPowers" name="superpowers">
+                  <label class="form-check-label" for="hasPowers">Super Powers?</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </section>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div> -->
       </div>
     </div>
   </div>
+
+
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdn.auth0.com/js/auth0-spa-js/1.22/auth0-spa-js.production.js"></script>
